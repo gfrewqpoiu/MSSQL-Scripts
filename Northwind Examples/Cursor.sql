@@ -1,3 +1,5 @@
+USE Northwind;
+GO
 CREATE OR ALTER PROCEDURE NeueProzedur
 AS 
 BEGIN

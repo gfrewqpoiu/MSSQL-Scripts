@@ -1,3 +1,5 @@
+USE Northwind;
+GO
 BEGIN
 -- Variablen Deklaration
 DECLARE @count int = 0
