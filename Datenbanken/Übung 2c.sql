@@ -98,6 +98,9 @@ BEGIN
 end
 
 -- Aufgabe 9:
+/*
+ Aufgrund der Fremdschlüssel Bedingungen können die Tupel nicht gelöscht werden.
+ */
 BEGIN
     BEGIN TRY
         DELETE FROM Kunde
