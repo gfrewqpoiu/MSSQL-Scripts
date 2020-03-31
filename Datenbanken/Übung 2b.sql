@@ -9,7 +9,6 @@ abt_nr NVARCHAR(4) NOT NULL PRIMARY KEY,
 abt_name NVARCHAR(20) NOT NULL,
 stadt NVARCHAR(15) NULL);
 -- Alternative:
-DROP TABLE IF EXISTS abteilung;
 CREATE TABLE abteilung (
 abt_nr NVARCHAR(4) NOT NULL,
 abt_name NVARCHAR(20) NOT NULL,
@@ -83,8 +82,6 @@ DROP TABLE IF EXISTS adressen;
    SELECT * FROM adressen; Wenn das keinen Fehler gibt, dann ist was schiefgelaufen.
  */
 -- Aufgabe 15:
--- noinspection SqlWithoutWhere
-DELETE FROM abteilung;
 INSERT INTO abteilung
 (abt_nr, abt_name, stadt)
 VALUES
@@ -93,8 +90,6 @@ VALUES
 ('a3', 'Freigabe', 'Stuttgart')
 ;
 -- Aufgabe 16:
--- noinspection SqlWithoutWhere
-DELETE FROM projekt;
 INSERT INTO projekt
 (pr_nr, pr_name, mittel)
 VALUES
@@ -103,8 +98,6 @@ VALUES
 ('p3', 'Merkur', 186500)
 
 -- Aufgabe 17:
--- noinspection SqlWithoutWhere
-DELETE FROM mitarbeiter;
 INSERT INTO mitarbeiter
 (m_nr, m_name, m_vorname, abt_nr)
 VALUES
@@ -134,8 +127,6 @@ SET stadt = N'Nürnberg'
 WHERE abt_nr = 'a2';
 
 -- Aufgabe 21:
--- noinspection SqlWithoutWhere
-DELETE FROM arbeiten;
 INSERT INTO arbeiten
 (m_nr, pr_nr, aufgabe, einst_datum)
 VALUES
