@@ -37,8 +37,8 @@ pr_nr NVARCHAR(4) NOT NULL,
 aufgabe NVARCHAR(15) NULL,
 einst_datum DATE NULL,
 CONSTRAINT pk_arbeiten PRIMARY KEY (m_nr, pr_nr),
-CONSTRAINT fk_mitarbeiter FOREIGN KEY (m_nr) REFERENCES mitarbeiter(m_nr),
-CONSTRAINT fk_projekt FOREIGN KEY (pr_nr) REFERENCES projekt(pr_nr)
+CONSTRAINT fk_arbeiten_mitarbeiter FOREIGN KEY (m_nr) REFERENCES mitarbeiter(m_nr),
+CONSTRAINT fk_arbeiten_projekt FOREIGN KEY (pr_nr) REFERENCES projekt(pr_nr)
 );
 -- Aufgabe 5:
 DROP TABLE IF EXISTS systeme;
@@ -49,7 +49,7 @@ hersteller NVARCHAR(20) NULL
 );
 -- Aufgabe 6:
 ALTER TABLE systeme
-ALTER COLUMN art NVARCHAR NULL;
+ALTER COLUMN art NVARCHAR(max) NULL;
 ALTER TABLE systeme
 ALTER COLUMN hersteller NVARCHAR(20) NOT NULL;
 -- Aufgabe 7:
