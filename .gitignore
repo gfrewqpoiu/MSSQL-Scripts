@@ -1,2 +1,16 @@
 
 .DS_Store
+
+.idea/dictionaries/
+
+.idea/dataSources/2dfc5604-1f16-4a5e-bdbb-ec88f0cf2ec0/storage_v2/_src_/database/tempdb.Uqu0yw/schema/
+
+.idea/dataSources/2dfc5604-1f16-4a5e-bdbb-ec88f0cf2ec0/storage_v2/_src_/database/
+
+.idea/dataSources/
+
+.idea/dataSources.local.xml
+
+.idea/dataSources.xml
+
+.idea/workspace.xml
