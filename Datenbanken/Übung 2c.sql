@@ -63,6 +63,10 @@ VALUES
     ('Y222T123', 'AAA Batterien 4er Packung', 2.99);
 
 -- Aufgabe 7:
+/*
+ Klar könnte man einfach die Sachen selbst berechnen und raussuchen und die Werte manuell eintragen,
+ aber so ist es direkt aus der Datenbank.
+ */
 BEGIN
     DECLARE @reduzierter_preis DECIMAL(14, 2)
     SELECT @reduzierter_preis = (preis * 0.9) from Produkt
@@ -95,7 +99,7 @@ BEGIN
     UPDATE Kunde
     SET Adresse = CONCAT(@strasse, ' ', '4')
     WHERE kNr = '10001000'
-end
+END
 
 -- Aufgabe 9:
 /*
@@ -105,10 +109,10 @@ BEGIN
     BEGIN TRY
         DELETE FROM Kunde
         WHERE kNr = '10001000'
-    end try
-    begin catch
-        print N'Konnte Kunden nicht löschen.'
-    end catch
+    END TRY
+    BEGIN CATCH
+        PRINT N'Konnte Kunden nicht löschen.'
+    END CATCH
 
     BEGIN TRY
         DELETE FROM Produkt
