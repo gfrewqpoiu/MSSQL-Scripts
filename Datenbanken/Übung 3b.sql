@@ -64,3 +64,17 @@ UPDATE projekt
 SET mittel = mittel * 1.1
 WHERE pr_nr = ANY (SELECT pr_nr FROM arbeiten WHERE m_nr = 10102 AND aufgabe = 'Projektleiter')
 -- Aufgabe 22
+UPDATE projekt
+SET pr_name = 'Luna'
+WHERE pr_nr = ANY (SELECT pr_nr FROM arbeiten JOIN mitarbeiter m on arbeiten.m_nr = m.m_nr
+    WHERE m_name = 'Meier' AND arbeiten.aufgabe = 'Gruppenleiter')
+-- Aufgabe 23
+UPDATE arbeiten
+SET einst_datum = '12.12.1991'
+WHERE pr_nr = 'p1' AND m_nr IN (SELECT m_nr FROM mitarbeiter JOIN abteilung a on mitarbeiter.abt_nr = a.abt_nr
+    WHERE a.abt_name = 'Verkauf')
+-- Aufgabe 24
+DELETE FROM arbeiten
+WHERE m_nr IN (SELECT m_nr FROM mitarbeiter JOIN abteilung a on mitarbeiter.abt_nr = a.abt_nr
+    WHERE a.stadt = N'München')
+EXEC RESET_Haupt_Datenbanken;
